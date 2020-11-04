@@ -1,0 +1,41 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+             xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+             xmlns:behaviors="clr-namespace:AvaloniaResponsiveLayout.Behaviors;assembly=AvaloniaResponsiveLayout"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaResponsiveLayout.Views.MainView"
+             x:Name="mainView">
+  <i:Interaction.Behaviors>
+    <behaviors:ScreenPseudoClassesBehaviour SmallMediumLimit="640" MediumLargeLimit="1008" />
+  </i:Interaction.Behaviors>
+  <UserControl.Styles>
+    <Style Selector=":SmallScreen Border.adaptive">
+      <Setter Property="Margin" Value="12" />
+    </Style>
+    <Style Selector=":MediumScreen Border.adaptive">
+      <Setter Property="Margin" Value="24" />
+    </Style>
+    <Style Selector=":LargeScreen Border.adaptive">
+      <Setter Property="Margin" Value="32" />
+    </Style>
+  </UserControl.Styles>
+  <Panel>
+    <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxWidth="500" MaxHeight="400">
+      <Border x:Name="adaptiveBorder" Classes="adaptive" BorderBrush="Yellow" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="#mainView.Bounds: " />
+            <TextBlock Text="{Binding #mainView.Bounds}" />
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="#adaptiveBorder.Margin: " />
+            <TextBlock Text="{Binding #adaptiveBorder.Margin}" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Border>
+  </Panel>
+</UserControl>

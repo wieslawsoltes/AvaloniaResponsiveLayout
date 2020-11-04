@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaResponsiveLayout
+namespace AvaloniaResponsiveLayout.Views
 {
     public class MainWindow : Window
     {

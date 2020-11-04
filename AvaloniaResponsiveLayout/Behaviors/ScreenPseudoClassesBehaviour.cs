@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Xaml.Interactivity;
 
-namespace AvaloniaResponsiveLayout
+namespace AvaloniaResponsiveLayout.Behaviors
 {
     public class ScreenPseudoClassesBehaviour : Behavior<Control>
     {
