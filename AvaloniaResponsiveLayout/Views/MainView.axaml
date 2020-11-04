@@ -26,14 +26,14 @@
     <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxWidth="500" MaxHeight="400">
       <Border x:Name="adaptiveBorder" Classes="adaptive" BorderBrush="Yellow" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="#mainView.Bounds: " />
+          <DockPanel>
+            <TextBlock Text="#mainView.Bounds: " DockPanel.Dock="Left" />
             <TextBlock Text="{Binding #mainView.Bounds}" />
-          </StackPanel>
-          <StackPanel Orientation="Horizontal">
-            <TextBlock Text="#adaptiveBorder.Margin: " />
+          </DockPanel>
+          <DockPanel>
+            <TextBlock Text="#adaptiveBorder.Margin: " DockPanel.Dock="Left" />
             <TextBlock Text="{Binding #adaptiveBorder.Margin}" />
-          </StackPanel>
+          </DockPanel>
         </StackPanel>
       </Border>
     </Border>
